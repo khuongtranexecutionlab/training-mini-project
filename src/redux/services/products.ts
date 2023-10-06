@@ -4,12 +4,12 @@ import { IProduct } from '../features/productsSlice';
 export const productApi = createApi({
   reducerPath: 'productApi',
   baseQuery: fetchBaseQuery({
-    baseUrl: '/api/products/'
+    baseUrl: 'https://product-mgn.onrender.com/'
   }),
   tagTypes: ['Products'],
   endpoints: builder => ({
     getProducts: builder.query<IProduct[], void>({
-      query: () => '?highlight=true',
+      query: () => 'products',
       providesTags: result =>
         result
           ? [
@@ -24,7 +24,7 @@ export const productApi = createApi({
     }),
 
     getProduct: builder.query<IProduct, string>({
-      query: id => `${id}`,
+      query: id => `product/${id}`,
       transformResponse: (response: { data: IProduct }) => response.data,
       providesTags: (_result, _error, id) => [{ type: 'Products', id }]
     }),

@@ -23,12 +23,9 @@ export default products.reducer;
 
 export type IProduct = {
   _id: string;
-  name: string;
+  product_name: string;
+  description: string;
   price: number;
-  images: string[];
-  rating: number;
-  category: string;
-  isHighLight: boolean;
-  slug: string;
+  image_url: string;
   blurHash?: string;
 };

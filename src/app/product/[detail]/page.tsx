@@ -8,12 +8,12 @@ type Props = {
 
 export const generateMetadata = async (props: Props): Promise<Metadata> => {
   const { params } = props;
+
   const product = await fetch(
-    'http://localhost:3000/api/products/' + params.detail
+    'https://product-mgn.onrender.com/product/' + params.detail
   ).then(i => i.json());
-  console.log(product);
   return {
-    title: `Thông tin sản phẩm ${product.name}`
+    title: `Thông tin sản phẩm ${product.data.product_name}`
   };
 };
 

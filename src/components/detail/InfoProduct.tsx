@@ -17,15 +17,15 @@ const InfoProduct: React.FC<IInfoProduct> = ({ data }) => {
             New Arrival
           </span>
           <h2 className="max-w-xl mt-6 mb-6 text-xl font-semibold leading-loose tracking-wide text-gray-700 md:text-2xl ">
-            {data.name}
+            {data.product_name}
           </h2>
           <div className="flex flex-wrap items-center mb-6">
-            {Utils.generateRating(data.rating)}
+            {Utils.generateRating(3)}
           </div>
           <p className="inline-block text-2xl font-semibold text-gray-700  ">
             <span>{data.price}$</span>
             <span className="ml-3 text-base font-normal text-gray-500 line-through ">
-              10,000.00$
+              9$
             </span>
           </p>
         </div>
@@ -38,6 +38,7 @@ const InfoProduct: React.FC<IInfoProduct> = ({ data }) => {
               Most customers receive within 3-31 days.
             </span>
           </p>
+          <span className="text-base text-gray-600 ">{data.description}</span>
         </div>
         <div className="mb-6 " />
         <div className="flex flex-wrap items-center mb-6">

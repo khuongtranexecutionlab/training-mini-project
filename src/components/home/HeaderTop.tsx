@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React from 'react';
 
 import { BsFacebook, BsTwitter, BsInstagram, BsLinkedin } from 'react-icons/bs';
@@ -26,16 +27,8 @@ const HeaderTop = () => {
             <b>FREE SHIPPING</b> THIS WEEK ORDER OVER - $55
           </div>
 
-          <div className="flex gap-4">
-            <select
-              className="text-gray-500 text-[12px] w-[70px]"
-              name="currency"
-              id="currency"
-            >
-              <option value="USD $">USD $</option>
-              <option value="EUR €">EUR €</option>
-              <option value="INR">INR</option>
-            </select>
+          <div className="flex gap-4 text-gray-500 text-[12px] w-[80px]">
+            <Link href="/admin">Create</Link>
 
             <select
               className="text-gray-500 text-[12px] w-[80px]"
