@@ -1,5 +1,5 @@
-import Link from "next/link";
-import React from "react";
+import React from 'react';
+import Link from 'next/link';
 
 const Navbar = () => {
   // use global state because filter data
@@ -11,10 +11,10 @@ const Navbar = () => {
             HOME
           </Link>
           <Link className="navbar__link relative" href="#">
-            {`MEN'S`}
+            MENS
           </Link>
           <Link className="navbar__link relative" href="#">
-            {`WOMEN'S`}
+            WOMENS
           </Link>
           <Link className="navbar__link relative" href="#">
             JEWELRY

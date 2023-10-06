@@ -1,5 +1,5 @@
-import React from "react";
-import Image from "../ui/Image";
+import React from 'react';
+import Image from '../ui/Image';
 
 const Testimonial = () => {
   return (

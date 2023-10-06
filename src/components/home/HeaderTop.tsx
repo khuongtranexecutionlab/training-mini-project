@@ -1,6 +1,6 @@
-import React from "react";
+import React from 'react';
 
-import { BsFacebook, BsTwitter, BsInstagram, BsLinkedin } from "react-icons/bs";
+import { BsFacebook, BsTwitter, BsInstagram, BsLinkedin } from 'react-icons/bs';
 
 const HeaderTop = () => {
   return (

@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 interface IFilterButtonProps {
   handleClick: (item: string) => void;
@@ -8,26 +8,26 @@ interface IFilterButtonProps {
 interface ComponentFilterButton extends IFilterButtonProps {}
 
 const items = [
-  "HOME",
-  "MEN'S",
-  "WOMEN'S",
-  "JEWELRY",
-  "PERFUME",
-  "BLOG",
-  "HOT OFFERS",
+  'HOME',
+  'MENS',
+  'WOMENS',
+  'JEWELRY',
+  'PERFUME',
+  'BLOG',
+  'HOT OFFERS'
 ];
 
 const FilterButton: React.FC<ComponentFilterButton> = ({
   active,
-  handleClick,
+  handleClick
 }) => {
   return (
-    <div className="gap-2" style={{ marginBottom: "1rem" }}>
-      {items.map((item) => (
+    <div className="gap-2" style={{ marginBottom: '1rem' }}>
+      {items.map(item => (
         <h1
           key={item}
           className={`${
-            active === item.toLowerCase() && "active"
+            active === item.toLowerCase() && 'active'
           } navbar__link relative`}
           onClick={() => handleClick(item.toLowerCase())}
         >

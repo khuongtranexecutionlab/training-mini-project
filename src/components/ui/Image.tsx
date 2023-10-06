@@ -1,9 +1,9 @@
-import React from "react";
-import ImageNext, { ImageProps } from "next/image";
+import React from 'react';
+import ImageNext, { ImageProps } from 'next/image';
 
 interface IProps extends ImageProps {}
 
-const Image: React.FC<IProps> = (props) => {
+const Image: React.FC<IProps> = props => {
   return (
     <ImageNext
       {...props}

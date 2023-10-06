@@ -1,8 +1,7 @@
-/* eslint-disable @next/next/no-img-element */
-"use client";
-import { IProduct } from "@/redux/features/productsSlice";
-import React from "react";
-import Slider, { Settings } from "react-slick";
+'use client';
+import { IProduct } from '@/redux/features/productsSlice';
+import React from 'react';
+import Slider, { Settings } from 'react-slick';
 
 interface ISliderProps {
   data: IProduct;
@@ -24,11 +23,11 @@ const SlideProduct: React.FC<ISliderProps> = ({ data }) => {
     },
     dots: true,
     dotsClass:
-      "!flex border border-transparent items-center rounded-[5px] justify-center !border !border-[#ddd6d6]",
+      '!flex border border-transparent items-center rounded-[5px] justify-center !border !border-[#ddd6d6]',
     infinite: true,
     speed: 500,
     slidesToShow: 1,
-    slidesToScroll: 1,
+    slidesToScroll: 1
   };
   return (
     <div className="w-full px-4 mb-8 md:w-1/2 md:mb-0 p-5 border border-gray-200 rounded">

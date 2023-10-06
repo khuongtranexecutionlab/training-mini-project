@@ -1,14 +1,12 @@
 const baseURL =
-  process.env.NODE_ENV === "development"
-    ? "http://localhost:3000"
-    : "http://localhost:3000";
+  process.env.NODE_ENV === 'development'
+    ? 'http://localhost:3000'
+    : 'http://localhost:3000';
 
 export async function generateBlurImageDataUrl(url: string) {
   const base64str = await fetch(
     `${baseURL}/_next/image?url=${url}&w=16&q=60`
-  ).then(async (res) =>
-    Buffer.from(await res.arrayBuffer()).toString("base64")
-  );
+  ).then(async res => Buffer.from(await res.arrayBuffer()).toString('base64'));
   const blurSvg = `
     <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 7'>
         <filter id='b' color-interpolation-filters='sRGB'>
@@ -20,8 +18,8 @@ export async function generateBlurImageDataUrl(url: string) {
   `;
 
   const toBase64 = (str: string) =>
-    typeof window === "undefined"
-      ? Buffer.from(str).toString("base64")
+    typeof window === 'undefined'
+      ? Buffer.from(str).toString('base64')
       : window.btoa(str);
 
   return `data:image/svg+xml;base64,${toBase64(blurSvg)}`;

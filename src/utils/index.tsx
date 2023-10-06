@@ -1,7 +1,7 @@
-import { useRouter, useSearchParams } from "next/navigation";
-import React from "react";
-import { generateBlurImageDataUrl } from "./optimize/image";
-import { AiFillStar, AiOutlineStar } from "react-icons/ai";
+import React from 'react';
+import { useRouter, useSearchParams } from 'next/navigation';
+import { generateBlurImageDataUrl } from './optimize/image';
+import { AiFillStar, AiOutlineStar } from 'react-icons/ai';
 
 export interface WindowDimentions {
   width: number;
@@ -86,22 +86,22 @@ const Utils: IUtils = {
     const router = useRouter();
     const searchParams = useSearchParams();
     const query: { search?: string; sort?: string } = {
-      search: "",
-      sort: "",
+      search: '',
+      sort: ''
     };
 
-    let search = searchParams.get("search");
-    let sort = searchParams.get("sort");
+    const search = searchParams.get('search');
+    const sort = searchParams.get('sort');
 
     if (search) query.search = search;
     if (sort) query.sort = sort;
 
     const pushQuery = ({ search, sort }: { search: string; sort: string }) => {
       if (search !== undefined) {
-        search === "" ? delete query.search : (query.search = search);
+        search === '' ? delete query.search : (query.search = search);
       }
       if (sort !== undefined) {
-        sort === "createdAt" ? delete query.sort : (query.sort = sort);
+        sort === 'createdAt' ? delete query.sort : (query.sort = sort);
       }
       const newQuery = new URLSearchParams(query).toString();
       router.push(`?${newQuery}`);
@@ -117,7 +117,7 @@ const Utils: IUtils = {
         </div>
       ));
     return <div className="flex gap-1">{stars}</div>;
-  },
+  }
 };
 
 export default Utils;

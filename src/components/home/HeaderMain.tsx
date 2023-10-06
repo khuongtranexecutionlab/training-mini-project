@@ -1,12 +1,12 @@
-import React from "react";
+import React from 'react';
 
-import { BsSearch } from "react-icons/bs";
-import { BiUser } from "react-icons/bi";
-import { FiHeart } from "react-icons/fi";
-import { HiOutlineShoppingBag } from "react-icons/hi";
-import Link from "next/link";
+import { BsSearch } from 'react-icons/bs';
+import { BiUser } from 'react-icons/bi';
+import { FiHeart } from 'react-icons/fi';
+import { HiOutlineShoppingBag } from 'react-icons/hi';
+import Link from 'next/link';
 
-const HeaderMain:React.FC = () => {
+const HeaderMain: React.FC = () => {
   return (
     <div className="border-b border-gray-200 py-6">
       <div className="container sm:flex justify-between items-center">

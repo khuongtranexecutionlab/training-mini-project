@@ -1,12 +1,12 @@
-"use client";
-import { useAppSelector } from "@/redux/hook";
-import { useGetProductsQuery } from "@/redux/services/products";
-import React from "react";
-import ProductCard from "./ProductCard";
+'use client';
+import { useAppSelector } from '@/redux/hook';
+import { useGetProductsQuery } from '@/redux/services/products';
+import React from 'react';
+import ProductCard from './ProductCard';
 
 const NewProducts = () => {
   const { isLoading, isFetching, error } = useGetProductsQuery();
-  const { data } = useAppSelector((state) => state.products);
+  const { data } = useAppSelector(state => state.products);
 
   return (
     <div className="container pt-16 relative z-10">

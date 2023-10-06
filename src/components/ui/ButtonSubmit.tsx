@@ -1,6 +1,6 @@
-"use client";
-import React from "react";
-import { experimental_useFormStatus as useFormStatus } from "react-dom";
+'use client';
+import React from 'react';
+import { experimental_useFormStatus as useFormStatus } from 'react-dom';
 
 interface ButtonComponent
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {
@@ -14,7 +14,7 @@ const Button: React.FC<ButtonComponent> = ({ title, ...props }) => {
     <button
       {...props}
       className={`bg-indigo-400 h-max w-max rounded-lg text-white font-bold hover:bg-indigo-300  duration-[500ms,800ms] ${
-        pending ? "hover:cursor-not-allowed" : "hover:cursor-pointer"
+        pending ? 'hover:cursor-not-allowed' : 'hover:cursor-pointer'
       }`}
       disabled={pending}
     >

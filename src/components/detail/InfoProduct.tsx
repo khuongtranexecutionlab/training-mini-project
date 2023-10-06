@@ -1,8 +1,8 @@
-import { IProduct } from "@/redux/features/productsSlice";
-import Utils from "@/utils";
-import Link from "next/link";
-import React from "react";
-import { AiOutlineHeart } from "react-icons/ai";
+import { IProduct } from '@/redux/features/productsSlice';
+import Utils from '@/utils';
+import Link from 'next/link';
+import React from 'react';
+import { AiOutlineHeart } from 'react-icons/ai';
 
 interface IInfoProduct {
   data: IProduct;

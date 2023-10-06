@@ -1,6 +1,5 @@
-import dynamic from "next/dynamic";
-import React from "react";
-import Image from "../ui/Image";
+import React from 'react';
+import Image from '../ui/Image';
 
 interface propsType {
   img: string;
@@ -19,7 +18,7 @@ const Slide: React.FC<propsType> = ({ img, title, mainTitle, price }) => {
         </h2>
 
         <h3 className="text-[24px] text-gray-500">
-          starting at{" "}
+          starting at{' '}
           <b className="text-[20px] md:text-[24px] lg:text-[30px]">{price}</b>
           .00
         </h3>

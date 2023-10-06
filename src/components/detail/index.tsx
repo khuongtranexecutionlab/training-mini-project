@@ -1,8 +1,8 @@
-"use client";
-import { useGetProductQuery } from "@/redux/services/products";
-import React from "react";
-import InfoProduct from "./InfoProduct";
-import SlideProduct from "./SlideProduct";
+'use client';
+import { useGetProductQuery } from '@/redux/services/products';
+import React from 'react';
+import InfoProduct from './InfoProduct';
+import SlideProduct from './SlideProduct';
 
 interface IDetailProps {
   id: string;

@@ -1,8 +1,8 @@
-import { IProduct } from "@/redux/features/productsSlice";
-import Utils from "@/utils";
-import Link from "next/link";
-import React from "react";
-import Image from "../ui/Image";
+import { IProduct } from '@/redux/features/productsSlice';
+import Utils from '@/utils';
+import Link from 'next/link';
+import React from 'react';
+import Image from '../ui/Image';
 
 interface IPropsType {
   index: number;
