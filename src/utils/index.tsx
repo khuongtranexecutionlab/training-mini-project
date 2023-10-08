@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { generateBlurImageDataUrl } from './optimize/image';

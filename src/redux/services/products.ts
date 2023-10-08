@@ -32,14 +32,12 @@ export const productApi = createApi({
     createProduct: builder.mutation<IProduct, object>({
       query(data) {
         return {
-          url: 'products',
+          url: 'product',
           method: 'POST',
           body: data
         };
       },
-      invalidatesTags: [{ type: 'Products', id: 'LIST' }],
-      transformResponse: (response: { data: { product: IProduct } }) =>
-        response.data.product
+      invalidatesTags: [{ type: 'Products', id: 'LIST' }]
     }),
 
     updateProduct: builder.mutation<
@@ -64,15 +62,18 @@ export const productApi = createApi({
       transformResponse: (response: { data: { product: IProduct } }) =>
         response.data.product
     }),
-    deleteProduct: builder.mutation<null, string>({
+    deleteProduct: builder.mutation<string, string>({
       query(id) {
         return {
-          url: `products/${id}`,
-          method: 'DELETE',
-          credentials: 'include'
+          url: `product/${id}`,
+          method: 'DELETE'
+          // credentials: 'include'
         };
       },
-      invalidatesTags: [{ type: 'Products', id: 'LIST' }]
+      transformResponse: (res: { data: string }, _, arg) => {
+        return arg;
+      }
+      // invalidatesTags: [{ type: 'Products', id: 'LIST' }]
     })
   })
 });

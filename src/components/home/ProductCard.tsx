@@ -1,17 +1,24 @@
 import { IProduct } from '@/redux/features/productsSlice';
+import { GrEdit, GrTrash } from 'react-icons/gr';
 import Utils from '@/utils';
 import Link from 'next/link';
 import React from 'react';
 import Image from '../ui/Image';
-
+import { useDeleteProductMutation } from '@/redux/services/products';
 interface IPropsType {
   index: number;
   item: IProduct;
 }
 
 const ProductCard: React.FC<IPropsType> = ({ index, item }) => {
+  const [remove] = useDeleteProductMutation();
+
   return (
-    <div className="px-4 border border-gray-200 rounded-xl max-w-[400px]">
+    <div className="px-4 border border-gray-200 rounded-xl max-w-[400px] relative group">
+      <div className="absolute flex gap-4 right-4 top-2  opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+        <GrTrash cursor="pointer" onClick={() => remove(item._id!)} />
+        <GrEdit cursor="pointer" />
+      </div>
       <Image
         className="w-full h-[330px] rounded-md mt-[30px]"
         src={item.image_url}

@@ -16,13 +16,20 @@ export const products = createSlice({
         state.data = action.payload;
       }
     );
+    builder.addMatcher(
+      productApi.endpoints.deleteProduct.matchFulfilled,
+      (state, action) => {
+        console.log(action.payload)
+        state.data = state.data.filter(i => i._id !== action.payload);
+      }
+    );
   }
 });
 
 export default products.reducer;
 
 export type IProduct = {
-  _id: string;
+  _id?: string;
   product_name: string;
   description: string;
   price: number;
