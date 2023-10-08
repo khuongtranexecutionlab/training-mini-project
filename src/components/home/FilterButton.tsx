@@ -1,6 +1,7 @@
 import React from 'react';
 
 interface IFilterButtonProps {
+  // eslint-disable-next-line no-unused-vars
   handleClick: (item: string) => void;
   active: string;
 }
