@@ -42,13 +42,13 @@ export const productApi = createApi({
 
     updateProduct: builder.mutation<
       IProduct,
-      { _id: string; formData: FormData }
+      { _id: string; formData: object }
     >({
       query({ _id, formData }) {
         return {
-          url: `products/${_id}`,
-          method: 'PATCH',
-          credentials: 'include',
+          url: `product/${_id}`,
+          method: 'PUT',
+          // credentials: 'include',
           body: formData
         };
       },
@@ -58,9 +58,7 @@ export const productApi = createApi({
               { type: 'Products', id: _id },
               { type: 'Products', id: 'LIST' }
             ]
-          : [{ type: 'Products', id: 'LIST' }],
-      transformResponse: (response: { data: { product: IProduct } }) =>
-        response.data.product
+          : [{ type: 'Products', id: 'LIST' }]
     }),
     deleteProduct: builder.mutation<string, string>({
       query(id) {

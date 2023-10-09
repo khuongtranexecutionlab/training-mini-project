@@ -8,25 +8,24 @@ import { useDeleteProductMutation } from '@/redux/services/products';
 interface IPropsType {
   index: number;
   item: IProduct;
+  handleFlip: () => void;
 }
 
-const ProductCard: React.FC<IPropsType> = ({ index, item }) => {
+const ProductCard: React.FC<IPropsType> = ({ index, item, handleFlip }) => {
   const [remove] = useDeleteProductMutation();
 
   return (
     <div className="px-4 border border-gray-200 rounded-xl max-w-[400px] relative group">
       <div className="absolute flex gap-4 right-4 top-2  opacity-0 group-hover:opacity-100 transition-opacity duration-300">
         <GrTrash cursor="pointer" onClick={() => remove(item._id!)} />
-        <GrEdit cursor="pointer" />
+        <GrEdit cursor="pointer" onClick={handleFlip} />
       </div>
       <Image
-        className="w-full h-[330px] rounded-md mt-[30px]"
+        className="w-[300px] h-[330px] rounded-md mt-[30px] mx-auto "
         src={item.image_url}
         width={200}
         height={315}
         alt={item.product_name}
-        // placeholder="blur"
-        // blurDataURL={item.blurHash}
         priority={index <= 1 ? true : false}
       />
 
@@ -39,10 +38,7 @@ const ProductCard: React.FC<IPropsType> = ({ index, item }) => {
         </h1>
         <div>{Utils.generateRating(5)}</div>
 
-        <div className="font-bold flex gap-4">
-          ${item.price}
-          {/* <del className="text-gray-500 font-normal">${price + 50}.00</del> */}
-        </div>
+        <div className="font-bold flex gap-4">${item.price}</div>
       </div>
     </div>
   );

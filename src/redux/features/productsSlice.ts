@@ -19,7 +19,6 @@ export const products = createSlice({
     builder.addMatcher(
       productApi.endpoints.deleteProduct.matchFulfilled,
       (state, action) => {
-        console.log(action.payload)
         state.data = state.data.filter(i => i._id !== action.payload);
       }
     );

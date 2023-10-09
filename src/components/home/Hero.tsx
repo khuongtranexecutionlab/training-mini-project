@@ -37,12 +37,11 @@ const Hero = () => {
       price: '$30'
     }
   ];
-
   return (
-    <div className='container pt-6 lg:pt-0 overflow-hidden'>
+    <div className="container pt-6 lg:pt-0 overflow-hidden">
       <Slider
         {...settings}
-        className='h-[350px] lg:h-[500px] xl:h-[600px] 2xl:h-[700px]'
+        className="h-[350px] lg:h-[500px] xl:h-[600px] 2xl:h-[700px]"
       >
         {slideData.map(item => (
           <Slide
