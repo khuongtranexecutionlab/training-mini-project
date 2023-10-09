@@ -17,7 +17,7 @@ const NewProducts = () => {
       ) : isLoading || isFetching ? (
         <Loading />
       ) : data ? (
-        <div className="grid grid-cols-1 place-items-center sm:place-items-start sm:grid-cols-2 lg:grid-col-3 xl:grid-cols-4 gap-10 xl:gap-x-20 xl:gap-y-10">
+        <div className="grid grid-cols-1 place-items-center sm:place-items-start sm:grid-cols-2 lg:grid-col-3 xl:grid-cols-3 gap-10 xl:gap-x-20 xl:gap-y-10 2xl:grid-cols-4">
           {data.map((item, index) => (
             <div key={item._id} className="w-[350px] h-[500px]">
               <CardFlip index={index} item={item} variant="Front" />
