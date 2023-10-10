@@ -83,6 +83,7 @@ const CardFlip: React.FC<ComponentProps> = props => {
               isAdmin
               finish={() => handleFlip()}
               id={props.item._id}
+              data={props.item}
             />
           </motion.div>
         </div>

@@ -16,7 +16,7 @@ const ProductCard: React.FC<IPropsType> = ({ index, item, handleFlip }) => {
 
   return (
     <div className="px-4 border border-gray-200 rounded-xl max-w-[400px] relative group">
-      <div className="absolute flex gap-4 right-4 top-2  opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+      <div className="absolute flex gap-4 right-4 top-2  ">
         <GrTrash cursor="pointer" onClick={() => remove(item._id!)} />
         <GrEdit cursor="pointer" onClick={handleFlip} />
       </div>

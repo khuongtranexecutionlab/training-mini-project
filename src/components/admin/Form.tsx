@@ -9,11 +9,20 @@ import {
   useCreateProductMutation,
   useUpdateProductMutation
 } from '@/redux/services/products';
+import { redirect } from 'next/navigation';
+import { IProduct } from '@/redux/features/productsSlice';
+
 interface IFormData extends FieldValues {
   product_name: string;
   description: string;
   image_url: string;
   price: number;
+}
+interface IFormProps {
+  id: string;
+  finish: () => void;
+  isAdmin: boolean;
+  data: IProduct;
 }
 const schema = yup.object().shape({
   product_name: yup.string().required('Please enter your name.'),
@@ -21,11 +30,12 @@ const schema = yup.object().shape({
   image_url: yup.string().required('Please enter your url image.'),
   price: yup.number().required('Please enter your price.')
 });
-const FormAdmin: React.FC<{
-  id?: string;
-  finish?: () => void;
-  isAdmin?: boolean;
-}> = ({ isAdmin, finish, id }) => {
+const FormAdmin: React.FC<Partial<IFormProps>> = ({
+  isAdmin,
+  finish,
+  id,
+  data
+}) => {
   const [create] = useCreateProductMutation();
   const [update] = useUpdateProductMutation();
 
@@ -36,13 +46,20 @@ const FormAdmin: React.FC<{
     formState: { errors }
   } = useForm<IFormData>({
     defaultValues: {
-      price: 0
+      price: data?.price ?? 0,
+      description: data?.description ?? '',
+      image_url: data?.image_url ?? '',
+      product_name: data?.product_name ?? ''
     },
     resolver: yupResolver(schema)
   });
 
   const onSubmit = async (values: IFormData) => {
-    if (!isAdmin) create(values).then(() => alert('success'));
+    if (!isAdmin)
+      create(values).then(() => {
+        alert('success');
+        redirect('/');
+      });
     else update({ _id: id!, formData: values }).then(() => alert('success'));
     finish?.();
     reset();
