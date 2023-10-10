@@ -13,7 +13,16 @@ export const generateMetadata = async (props: Props): Promise<Metadata> => {
     'https://product-mgn.onrender.com/product/' + params.detail
   ).then(i => i.json());
   return {
-    title: `Thông tin sản phẩm ${product.data.product_name}`
+    title: `Name ${product.data.product_name}`,
+    description: `Description ${product.data.description}`,
+    openGraph: {
+      locale: 'fr_FR',
+      images: {
+        url: product.data.image_url,
+        width: 1200,
+        height: 1200
+      }
+    }
   };
 };
 
